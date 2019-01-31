@@ -1,0 +1,60 @@
+/*
+Filename:       Ip8_MaxT_Tellers
+Author:         Max Taylor, alone
+Date:           1/31/19
+*/
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int tellers;
+    int sick;
+    int ctr;
+    int totalsick;
+    
+    
+    tellers =0;
+    sick=0;
+    ctr=1;
+    totalsick = 0;
+    
+    do          // start of do while loop
+    {
+    cout << "How many tellers were employed in the last 3 years?\n";
+    cin >> tellers;         //user input
+    }
+    while (tellers<0);
+    
+    while(ctr <= tellers)
+    {
+        do{
+            cout << "How many days was teller " << ctr << " sick in year 1?  ";
+            cin >> sick;
+        }
+        while (sick <0 || sick > 365);
+        totalsick += sick;
+        
+        do{
+        cout << "How many days was teller " << ctr << " sick in year 2?  ";
+        cin >> sick;
+        }
+        while (sick <0 || sick > 365);
+        totalsick += sick;
+        
+        do{
+        cout << "How many days was teller " << ctr << " sick in year 3?  ";
+        cin >> sick;
+        }
+        while (sick <0 || sick > 365);
+        totalsick += sick;
+        
+        ctr++;
+    }
+    
+    cout << "The " << tellers << " tellers missed " << totalsick << " days in the last 3 years.";
+    
+    return 0;
+}
+
